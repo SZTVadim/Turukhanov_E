@@ -14,7 +14,7 @@ coordinates = (10, 20, 30, 20, 10, 20, 40)
 print(coordinates[0])
 print(coordinates[-1])
 print(coordinates[2:5])
-30 in coordinates
+print(30 in coordinates)
 coordinates.index(20)
 coordinates.count(20)
 coordinates.count(50)
