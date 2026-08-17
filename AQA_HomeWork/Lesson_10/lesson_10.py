@@ -14,9 +14,9 @@ options = {"headless": True, "timeout": 5000}
 
 
 def start_session(browser, timeout, headless):
-    return print(f"{browser}, timeout={timeout}, headless={headless}")
+    return f"{browser}, timeout={timeout}, headless={headless}"
 
 
 config = {**browser, **options}
-start_session(**config)
+print(start_session(**config))
 print(config)
