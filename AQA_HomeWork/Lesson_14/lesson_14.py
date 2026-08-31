@@ -42,7 +42,7 @@ class Zoo:
 
 
 def animal_sound(animal):
-    animal.make_sound()
+    animal_sound(animal)
 
 # полиморфизм это потому что этот медот сам решает
 # что ему выводить исходя из контекста,
