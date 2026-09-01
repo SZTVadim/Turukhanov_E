@@ -42,7 +42,7 @@ class Zoo:
 
 
 def animal_sound(animal):
-    animal_sound(animal)
+    animal.make_sound()
 
 # полиморфизм это потому что этот медот сам решает
 # что ему выводить исходя из контекста,
@@ -63,7 +63,7 @@ zoo.add_animal(cat1)
 print(zoo.get_animals_count())
 
 for animal in zoo.get_all_animals():
-    animal.make_sound()
+    animal_sound(animal)
 
 # # 11) Попробуйте создать объект Animal() напрямую — объясните в комментарии,
 # что произошло и почему
