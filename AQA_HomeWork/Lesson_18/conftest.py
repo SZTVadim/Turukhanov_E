@@ -88,4 +88,3 @@ def metrics():
     print("SETUP metrics")
     yield
     print("TEARDOWN metrics")
-
