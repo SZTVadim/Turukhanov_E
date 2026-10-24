@@ -1,6 +1,9 @@
 Локаторы Поиск placeholder="Поиск"
 page.get_by_placeholder("Поиск")
 page.locator('input[placeholder="Поиск"]')
+page.locator(.oxd-main-menu-search)
+page.locator(.oxd-input--active)
+page.locator(//input[@placeholder="Поиск"])
 
 Кнопка свернуть боковую панель
 page.locator("button.oxd-main-menu-button")
@@ -8,6 +11,7 @@ page.locator("button.oxd-main-menu-button")
 Боковая панель кнопка Dashboard
 page.get_by_text("Dashboard")
 page.locator('//span[text()="Dashboard"]')
+page.locator(a[href="/web/index.php/dashboard/index"])
 
 Блок My Actions
 expect(page.get_by_text("My Actions")).to_be_visible()
@@ -18,7 +22,7 @@ page.get_by_role("button", name="Upgrade")
 page.locator("button.orangehrm-upgrade-button")
 
 Шестеренка
-page.locator(".orangehrm-leave-card-icon")
-
+page.locator(.orangehrm-leave-card-icon)
+page.locator(//i[contains(@class, 'orangehrm-leave-card-icon')])
 в блоке
-page.locator(".oxd-text.oxd-text--span[title='Unassigned']")
+page.locator(.oxd-text.oxd-text--span[title='Engineering'])
