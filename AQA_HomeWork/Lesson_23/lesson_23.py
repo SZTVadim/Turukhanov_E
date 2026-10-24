@@ -67,17 +67,32 @@ def test_practice_form(page: Page):
     expect(result_modal).to_be_visible()
     expect(result_title).to_have_text("Thanks for submitting the form")
 
-    expect(result_modal).to_contain_text(f"{first_name} {last_name}")
-    expect(result_modal).to_contain_text(email)
-    expect(result_modal).to_contain_text(mobile)
-    expect(result_modal).to_contain_text("Male")
-    expect(result_modal).to_contain_text("2000-05-10")
-    expect(result_modal).to_contain_text(selected_subject)
-    expect(result_modal).to_contain_text("Reading")
-    expect(result_modal).to_contain_text(address)
-    expect(result_modal).to_contain_text(state)
-    expect(result_modal).to_contain_text(state)
+    name_row = page.locator("#resultsTable tr", has_text="Student Name")
+    expect(name_row).to_contain_text(f"{first_name} {last_name}")
 
-    # expect(result_modal).to_contain_text(city)
-    # по идее еще должна быть эта проверка,
-    # но отсутвует это поле в модальном окне
+    email_row = page.locator("#resultsTable tr", has_text="Student Email")
+    expect(email_row).to_contain_text(email)
+
+    mobile_row = page.locator("#resultsTable tr", has_text="Mobile")
+    expect(mobile_row).to_contain_text(mobile)
+
+    gender_row = page.locator("#resultsTable tr", has_text="Gender")
+    expect(gender_row).to_contain_text("Male")
+
+    birth_row = page.locator("#resultsTable tr", has_text="Date of Birth")
+    expect(birth_row).to_contain_text("2000-05-10")
+
+    subjects_row = page.locator("#resultsTable tr", has_text="Subjects")
+    expect(subjects_row).to_contain_text(selected_subject)
+
+    hobbies_row = page.locator("#resultsTable tr", has_text="Hobbies")
+    expect(hobbies_row).to_contain_text("Reading")
+
+    address_row = page.locator("#resultsTable tr", has_text="Address")
+    expect(address_row).to_contain_text(address)
+    state_city_row = page.locator("#resultsTable tr",
+                                  has_text="State and City"
+                                  )
+    expect(state_city_row).to_contain_text(state)
+# проверка города отсутвует тк он
+# не отображается в модальном окне с результатом
